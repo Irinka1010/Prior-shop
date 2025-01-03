@@ -1,0 +1,121 @@
+
+{head}
+{header}
+<section class="section-page-top">
+    <div class="content-container">
+        <div class="page-top_box relative">
+            <h2 class="page-top_title">{contacts_title}</h2>
+            <ul>
+                <li>                
+                    <a href="./" class="page-top-element">
+                        <span class="box-icon">
+                            <svg aria-hidden="true" class="e-font-icon-svg e-fas-home" viewBox="0 0 576 512" xmlns="http://www.w3.org/2000/svg"><path d="M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z"></path></svg>
+                        </span>
+                        {home_page}
+                    </a>
+                </li>
+                <li>
+                    <span  class="page-top-element">
+                        <span class="box-icon">
+                            <svg aria-hidden="true" class="e-font-icon-svg e-fas-angle-double-right" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"></path></svg>
+                        </span>
+                        {contacts_title}
+                    </span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+<section class="section-contact relative">
+    <div class="elementor-shap shape-top">
+        <svg  viewBox="0 0 1000 100" preserveAspectRatio="none">
+            <path class="elementor-shape-fill" d="M615.2,96.7C240.2,97.8,0,18.9,0,0v100h1000V0C1000,19.2,989.8,96,615.2,96.7z"></path>
+        </svg>
+    </div>
+     <div class="elementor-shap shape-bottom">
+        <svg  viewBox="0 0 1000 100" preserveAspectRatio="none">
+            <path class="elementor-shape-fill" d="M500,97C126.7,96.3,0.8,19.8,0,0v100l1000,0V1C1000,19.4,873.3,97.8,500,97z"></path>
+        </svg>
+    </div>
+     <div class="content-container">
+        <div class="f-x direction-row">
+            {ifDelContact}
+            <div class="contact-element">
+              <div class="cont-infa-list  p-10 direction-col">
+                <div class="cont-infa-emement">
+                    <h3>{mail-item}:</h3>
+                    <a  href="mailto:{mail}">{mail}</a>
+                </div>
+                 <div class="cont-infa-emement">
+                   <h3>{address-text}:</h3>
+                    <p>{ogrn} {adres}</p>
+                </div>
+                <div class="cont-infa-emement">
+                   <h3>{phone-item}:</h3>
+                    <a href="tel:{phone}">{phone}</a>
+                </div>
+              </div>
+            </div>
+             {endDelContact}
+            <div class="contact-element">
+                <h2 class="title"> {write_us}</h2>
+                <form class="form cont-infa-list  p-10 relative" action="{thx-page}">
+                    <div class="form_input-group">
+                         <input
+                                        class="inputYU"
+                                        placeholder="{nameform}*"
+                                        type="text"
+                                        name="name"
+                                        required                    
+                            />                        
+                        <input
+                            class="inputYU"
+                            placeholder="{email_form}*"
+                            type="email"
+                            name="email"
+                            required                  
+                        /> 
+                    </div>                 
+                    <textarea
+                            class="textareaYU"
+                            placeholder="{message_form}*"
+                            name="comment"
+                            rows="5"                  
+                            required
+                        ></textarea>
+                        <div class="privacy-form">
+                            <div class="custom-check">
+                                <input class="custom-check-input" type="checkbox" value="" id="flexCheckDefault" required/>
+                                <label class="custom-check-label" for="flexCheckDefault" required>
+                                    {checkaccept} <a href="{privacy-link}">{privacy}</a>
+                                </label>
+                            </div>
+                            <button class="btn-{rand_number_5}" type="submit" style="margin: 0 auto;">
+                                <span>{send_form}</span>
+                            </button>
+                        </div>
+                </form>
+            </div>
+        </div>
+     </div>
+   
+</section>
+{ifDelContact}
+<section class="map-section">
+     <div class="content-container">
+            <div class="map-box">
+             <iframe
+                    src="https://maps.google.com/maps?hl=en&q={maps}&ie=UTF8&t=&z=8&iwloc=B&output=embed"
+                    width="100%"
+                    height="{map_height}"
+                    style="border: 0"
+                    allowfullscreen=""
+                    loading="lazy"
+                ></iframe>
+        </div>
+     </div>
+</section>
+ {endDelContact}
+{footer}
+</body>
+</html>
