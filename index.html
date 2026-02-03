@@ -664,7 +664,8 @@
     <div class="main-form-container">
       <div class="form-main-wrapper color-box-form"> 
 
-        <form class="page-form-wrap relative" id="orderForm">
+        <form class="page-form-wrap relative" id="orderForm"  method="POST"
+             action="https://mexal07.app.n8n.cloud/webhook/website-order">
           
           <label for="name">Введіть своє ім'я</label>
           <input class="input-g64328824" id="name" type="text" name="name" required>
@@ -723,41 +724,23 @@
 </section>
 
 <script>
-document.getElementById("orderForm").addEventListener("submit", function (e) {
-  e.preventDefault();
-
+document.getElementById("orderForm").addEventListener("submit", function () {
   const form = this;
   const btn = form.querySelector("button[type='submit']");
   const successMsg = document.getElementById("formSuccess");
 
+
   btn.disabled = true;
   btn.querySelector("span").innerText = "Відправляємо...";
 
-  fetch("https://mexal07.app.n8n.cloud/webhook/website-order", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-      name: document.getElementById("name").value,
-      phone: document.getElementById("phone").value,
-      count: document.getElementById("count").value,
-      address: document.getElementById("address").value,
-      site: "Prior Shop"
-    })
-  })
-    .then(() => {
-      successMsg.style.display = "block";
-      form.reset();
-      btn.querySelector("span").innerText = "Відправлено";
-    })
-    .catch(() => {
-      alert("Помилка. Спробуйте ще раз");
-      btn.disabled = false;
-      btn.querySelector("span").innerText = "Замовляйте тут";
-    });
+ 
+  setTimeout(() => {
+    successMsg.style.display = "block";
+    btn.querySelector("span").innerText = "Відправлено";
+  }, 800);
 });
 </script>
+
 
 
 
